@@ -95,11 +95,11 @@ const Header = ({ darkMode, setDarkMode }) => {
 
         {/* Right: Menu Toggle & Search Icon */}
         <div className="flex items-center space-x-4">
-          {/* <button className="relative flex overflow-hidden  font-bold text-lg px-8 py-4 rounded-md">
-            {["C", "O", "N", "N", "E", "C", "T"].map((letter, index) => (
+         {/* <button className="relative flex overflow-hidden  font-bold text-lg px-8 py-4 rounded-md">
+            {["C","O","N", "N", "E", "C", "T"].map((letter, index) => (
               <span
                 key={index}
-                className={`w-6 h-full flex items-center justify-center`}
+                className={`w-6 h-full flex items-center bg-clip-text text-transparent justify-center`}
                 style={{
                   backgroundColor: [
                     "#ff0000", // Red
@@ -114,7 +114,7 @@ const Header = ({ darkMode, setDarkMode }) => {
                 {letter}
               </span>
             ))}
-          </button> */}
+          </button>  */}
           <CiWallet className="text-2xl" />
           <button className="py-3 px-5 rounded-2xl text-[#89FFCC] hover:text-black hover:bg-none hover:shadow-[2px_2px_2px_#54fffb,-2px_-2px_2px_#ff05df] dark:hover:text-[#89FFCC] bg-gradient-to-tl from-[#54fffb] to-[#ff05df] via-black/60">
             Connect

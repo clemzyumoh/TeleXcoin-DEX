@@ -15,6 +15,7 @@ import "../src/index.css";
 //import MobHeader from "./Components/MobHeader";
 //import BottomNavbar from "./Components/BottomNavbar";
 import Navigation from "./Components/Navigation";
+import Saxophone from "./Sections/Discover/Saxophone";
 
 const App = () => {
   //const { darkMode } = useSelector((state) => state.settings);
@@ -74,7 +75,7 @@ const App = () => {
               <Route
                 path="/discover"
                 element={
-                  <Discover darkMode={darkMode} setDarkMode={setDarkMode} />
+                  <Saxophone darkMode={darkMode} setDarkMode={setDarkMode} />
                 }
               />
               <Route
