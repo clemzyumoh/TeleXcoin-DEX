@@ -18,7 +18,7 @@ import img1 from "../../assets/active.jpg"
 import { FaPowerOff } from "react-icons/fa";
 const Foundation = () => {
   return (
-    <div className=" lg:pb-3 md:pb-40 pb-32 flex w-full  flex-col justify-center items-center dark:bg-gradient-to-bl dark:from-black dark:to-black dark:via-black bg-gradient-to-bl from-[#E8EBFF] to-white   via-[#EBF2FD] ">
+    <div className=" lg:pb-3 md:pb-40 pb-32 flex w-full pt-20 md:pt-20    flex-col justify-center items-center dark:bg-gradient-to-bl dark:from-black dark:to-black dark:via-black bg-gradient-to-bl from-[#E8EBFF] to-white   via-[#EBF2FD] ">
       {/* <div className="flex w-full px-2 justify-between mx-4 mb-3   items-center">
         <AnimatedText
           text="FOUNDATION"

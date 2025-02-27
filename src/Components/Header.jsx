@@ -29,7 +29,7 @@ const Header = ({ darkMode, setDarkMode }) => {
   };
 
   return (
-    <motion.div className="fixed top-0 w-full lg:w-[80vw] lg:dark:bg-black  flex justify-between items-center p-4 z-40 text-black dark:text-white lg:bg-neutral-100 bg-neutral-300 dark:bg-gray-800">
+    <motion.div className="fixed top-0 w-full lg:w-[80vw] lg:dark:bg-black md:px-14  flex justify-between items-center p-4 z-40 text-black dark:text-white  bg-gray-200 dark:bg-gray-800">
       {/* 🔹 Laptop Layout */}
       <div className="hidden lg:flex items-center justify-around w-full">
         {/* Logo / Title */}
@@ -84,12 +84,12 @@ const Header = ({ darkMode, setDarkMode }) => {
           <img
             src={logo1}
             alt=""
-            className="dark:hidden w-[28vw] scale-150 mx-3 "
+            className="dark:hidden w-[28vw] md:my-3 scale-150 mx-3 "
           />
           <img
             src={logo2}
             alt=""
-            className="hidden dark:block w-[20vw] mr-8 scale-150 "
+            className="hidden dark:block w-[20vw] md:my-3 mr-8 scale-150 "
           />
         </div>
 
