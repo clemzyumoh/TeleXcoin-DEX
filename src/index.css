@@ -1,0 +1,13 @@
+@import '@fontsource/roboto-mono';
+
+@import "tailwindcss"; 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
