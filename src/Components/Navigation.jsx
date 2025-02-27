@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink , useLocation} from "react-router-dom";
 import { FiHome, FiShuffle, FiLayers } from "react-icons/fi";
 import { IoGameControllerOutline } from "react-icons/io5";
 import { FaVoteYea } from "react-icons/fa";
@@ -9,7 +9,8 @@ import { FaMicrophone } from "react-icons/fa";
 import { TbCoinTakaFilled } from "react-icons/tb";
 import { BsCurrencyExchange } from "react-icons/bs";
 //import { TbCoinTaka } from "react-icons/tb";
-const Navigation = ({darkMode}) => {
+const Navigation = ({ darkMode }) => {
+  const location = useLocation(); // Get the current URL
   const Menus = [
     {
       to: "/",
@@ -42,20 +43,36 @@ const Navigation = ({darkMode}) => {
       dis: "translate-x-64",
     },
   ];
-  const [active, setActive] = useState(0);
-  // Get the active menu index
-  const activeIndex = Menus.findIndex((menu) => menu.to === location.pathname);
-  const [spanLeft, setSpanLeft] = useState("");
+//   const [active, setActive] = useState(0);
+//   // Get the active menu index
+//   const activeIndex = Menus.findIndex((menu) => menu.to === location.pathname);
+//   const [spanLeft, setSpanLeft] = useState("");
 
-  useEffect(() => {
-    if (activeIndex !== -1) {
-      setSpanLeft(
-        `calc(${(activeIndex + 0.5) * (100 / Menus.length)}% - 2rem)`
-      );
-    } else {
-      setSpanLeft("unset"); // Hide it when no menu is active
-    }
-  }, [activeIndex]);
+//   useEffect(() => {
+//     if (activeIndex !== -1) {
+//       setSpanLeft(
+//         `calc(${(activeIndex + 0.5) * (100 / Menus.length)}% - 2rem)`
+//       );
+//     } else {
+//       setSpanLeft("unset"); // Hide it when no menu is active
+//     }
+    //   }, [activeIndex]);
+    const [active, setActive] = useState(0);
+    const activeIndex = Menus.findIndex(
+      (menu) => menu.to === location.pathname
+    );
+    const [spanLeft, setSpanLeft] = useState("");
+
+    useEffect(() => {
+      if (activeIndex !== -1) {
+        setActive(activeIndex);
+        setSpanLeft(
+          `calc(${(activeIndex + 0.5) * (100 / Menus.length)}% - 2rem)`
+        );
+      } else {
+        setSpanLeft("unset");
+      }
+    }, [activeIndex]);
 
   return (
     <div className="dark:bg-gray-800 max-h-[4.4rem] bg-gray-200   pb-6 px-6 rounded-t-3xl z-50 flex justify-between items-center  text-black dark:text-white lg:hidden bottom-0 mt-10 w-full fixed ">
@@ -74,9 +91,7 @@ const Navigation = ({darkMode}) => {
           style={{
             left: spanLeft,
             opacity: activeIndex === -1 ? -0 : 1,
-          }}>
-        
-        </span>
+          }}></span>
 
         {Menus.map((menu, index) => (
           <NavLink
