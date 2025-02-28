@@ -147,7 +147,7 @@ const Launchpad = () => {
         />
       </div>
 
-      <div className="grid lg:grid-cols-2 grid-cols-1 dark:bg-[#E1F0F8] py-8 rounded-2xl mt-10 mb-16 gap-6 md:mx-16 mx-4 px-4 lg:px-6">
+      <div className="grid lg:grid-cols-2 grid-cols-1 dark:bg-[#E1F0F8] py-8 rounded-2xl mt-10 mb-16 gap-6 md:mx-16 mx-2 px-2 lg:px-6">
         {projects.map((project) => (
           <motion.div
             key={project.id}
@@ -170,7 +170,7 @@ const Launchpad = () => {
               />
 
               {/* Phase Completion & Vote Buttons */}
-              <div className="gap-3  flex text-white text-[12px] w-full">
+              <div className="md:gap-3 gap-2 flex text-white text-[12px] w-full">
                 {[
                   { phase: "Phase 1", percent: "100%" },
                   { phase: "Phase 2", percent: "75%" },
@@ -198,17 +198,17 @@ const Launchpad = () => {
                   <h3 className="text-lg font-semibold leading-tight">
                     {project.name}
                   </h3>
-                  <p className="text-sm">{project.description}</p>
+                  <p className="text-[12px]">{project.description}</p>
                   <a
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-bold text-md text-transparent">
+                    className="bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-bold text-sm text-transparent">
                     {" "}
                     {project.href}
                   </a>
                 </div>
-                <h3 className="font-bold text-md   md:text-xl bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent">
+                <h3 className="font-bold text-sm   md:text-xl bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent">
                   A & P{" "}
                 </h3>
               </div>
