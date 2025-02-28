@@ -120,7 +120,7 @@ const Navigation = ({ darkMode }) => {
         </span> */}
         <span
           key={darkMode}
-          className="dark:bg-gray-800 bg-neutral-200  duration-500 shadow-[2px_2px_5pxrgba(0,0,0,0.2),-1px_-1px_5px_rgba(0,0,0,0.2)] dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10p_rgba(255,255,255,0.1)] border-gray-900 w-16 h-9 absolute -top-6  rounded-t-full"
+          className="dark:bg-gray-800 bg-neutral-200  duration-500 shadow-[2px_2px_5pxrgba(0,0,0,0.2),-1px_-1px_5px_rgba(0,0,0,0.2)] dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10p_rgba(255,255,255,0.1)] border-gray-900 w-16 h-9 absolute -top-5  rounded-t-full"
           //   style={{
           //     left: `calc(${(activeIndex + 0.5) * (100 / Menus.length)}% - 2rem)`, // Dynamic positioning
           //   }}
