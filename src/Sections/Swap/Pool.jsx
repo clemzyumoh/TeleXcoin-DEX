@@ -93,9 +93,9 @@ const Pool = () => {
   );
 
   return (
-    <div className="p-6 flex flex-col w-full">
+    <div className="p-6 flex flex-col mb-32 w-full">
       <div className="flex w-full justify-between items-center mb-6">
-        <h2 className="md:text-xl text-sm font-bold">Liquidity Pools</h2>
+        <h2 className="md:text-xl hidden md:block text-sm font-bold">Liquidity Pools</h2>
         <input
           type="text"
           placeholder="Search Pools..."

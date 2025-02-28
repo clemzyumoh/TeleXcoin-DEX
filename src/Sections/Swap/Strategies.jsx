@@ -23,10 +23,10 @@ const Strategies = () => {
   );
 
   return (
-    <div className="p-4 max-w-4xl mx-auto">
+    <div className="p-4 max-w-4xl mb-32 mx-auto">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Liquidity Pools</h2>
+        <h2 className="text-xl hidden md:block font-bold">Liquidity Pools</h2>
         <div className="relative">
           <input
             type="text"
