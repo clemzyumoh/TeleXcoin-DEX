@@ -15,7 +15,7 @@ import { MdOutlineManageSearch } from "react-icons/md";
 import logo1 from "../assets/tex-logo1.png"
 import logo2 from "../assets/tex-logo4.png";
 import { CiWallet } from "react-icons/ci";
-
+import AnimatedText from "./AnimationText";
 const Header = ({ darkMode, setDarkMode }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -79,23 +79,29 @@ const Header = ({ darkMode, setDarkMode }) => {
       {/* 🔹 Mobile Layout */}
       <div className="lg:hidden flex w-full justify-between items-center">
         {/* Left: Settings Button */}
+        <AnimatedText
+          text="TeleXcoin"
+          animation="fade"
+          as="h1"
+          className="font-bold md:ml-5    lg:text-end lg:mt-20 text-3xl lg:leading-normal  bg-gradient-to-bl from-[#54fffb] to-[#ff05df] via-black/20 bg-clip-text font-orbitron text-transparent"
+        />
 
         <div className="mx-3">
           <img
             src={logo1}
             alt=""
-            className="dark:hidden w-[28vw] md:my-3 scale-150 mx-3 "
+            className="hidden w-[28vw] md:my-3 scale-150 mx-3 "
           />
           <img
             src={logo2}
             alt=""
-            className="hidden dark:block w-[20vw] md:my-3 mr-8 scale-150 "
+            className="hidden  w-[20vw] md:my-3 mr-8 scale-150 "
           />
         </div>
 
         {/* Right: Menu Toggle & Search Icon */}
         <div className="flex items-center space-x-4">
-         {/* <button className="relative flex overflow-hidden  font-bold text-lg px-8 py-4 rounded-md">
+          {/* <button className="relative flex overflow-hidden  font-bold text-lg px-8 py-4 rounded-md">
             {["C","O","N", "N", "E", "C", "T"].map((letter, index) => (
               <span
                 key={index}

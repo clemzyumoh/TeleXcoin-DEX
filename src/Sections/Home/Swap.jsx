@@ -8,9 +8,9 @@ const Swap = () => {
   const [tokens, setTokens] = useState([]);
   const [tokenIn, setTokenIn] = useState(null);
   const [tokenOut, setTokenOut] = useState({
-    id: "txc",
-    symbol: "TXC",
-    name: "TXC",
+    id: "drc",
+    symbol: "DRC",
+    name: "DRC",
   }); // Default token out
   const [amountIn, setAmountIn] = useState("");
   const [amountOut, setAmountOut] = useState("");
@@ -26,7 +26,7 @@ const Swap = () => {
       })
       .then((response) => {
         setTokens(response.data);
-        setTokenIn(response.data[0]); // Set first token as default
+        setTokenIn(response.data[2]); // Set first token as default
       })
       .catch((error) => console.error("Error fetching token data:", error));
   }, []);
@@ -48,42 +48,37 @@ const Swap = () => {
   );
 
   return (
-    <div className="bg-gray-800 p-6 rounded-4xl w-[90vw mb-32 flex flex-col items-center md:w-[60vw]  lg:w-[40vw] mx-auto text-white">
+    <div className="bg-gray-800 p-6 rounded-4xl mb-32 flex flex-col w-[85vw] items-center md:w-[60vw]  lg:w-[40vw] text-white">
       <h2 className="text-xl dark:text-[#54fffb] mb-4">Swap</h2>
 
       {/* Input and Token Selector Container */}
       <div className="flex flex-col w-full items-center space-y-4">
         {/* Token In */}
-        <div className="flex flex-row items-center dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)] bg-gray-800 p-3 rounded-lg">
-          <div className="flex flex-col justify-between  w-full">
-            <input
-              type="text"
-              placeholder="Amount"
-              value={amountIn}
-              onChange={(e) => setAmountIn(e.target.value)}
-              className="w-full bg-transparent text-lg outline-none mb-1"
-            />
-            <span className="text-gray-400 text-sm">$0.0</span>
-          </div>
-          <div className="relative   ml-4">
-            <div
-              className="flex items-center  cursor-pointer"
-              onClick={() => setShowDropdownIn(!showDropdownIn)}>
-              {tokenIn ? (
-                <>
-                  <img
-                    src={tokenIn.image}
-                    alt={tokenIn.symbol}
-                    className="w-6 h-6 mr-2"
-                  />
-                  <span>{tokenIn.symbol.toUpperCase()}</span>
-                </>
-              ) : (
-                <span>Select Token</span>
-              )}
+        <div className="flex justify-between w-full items-center dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)] bg-gray-800 p-3 rounded-lg">
+          <div className="relative flex   flex-col items-center cursor-pointer w-auto">
+            <div className="flex  items-center w-full">
+              <div
+                className="flex items-center  gap-2 w-full  cursor-pointer"
+                onClick={() => setShowDropdownIn(!showDropdownIn)}>
+                {tokenIn ? (
+                  <div className="flex items-center w-full gap-2 justify-between">
+                    <img
+                      src={tokenIn.image}
+                      alt={tokenIn.symbol}
+                      className="w-4 h-4 "
+                    />
+
+                    <span>{tokenIn.symbol.toUpperCase()}</span>
+                  </div>
+                ) : (
+                  <span>Select Token</span>
+                )}
+                <FaChevronDown className="ml-2 text-gray-100 " />
+              </div>
             </div>
+
             {showDropdownIn && (
-              <div className="absolute bg-gray-800   mt-2 right-0 p-2 rounded-lg w-48 max-h-40 overflow-auto z-10">
+              <div className="absolute bg-gray-800 top-10  mt-2 left-0 p-2 rounded-lg w-48 max-h-40 overflow-auto z-10">
                 <input
                   type="text"
                   placeholder="Search token..."
@@ -112,32 +107,32 @@ const Swap = () => {
               Balance:0
             </span>
           </div>
+          <div className="flex flex-col items-end w-auto">
+            <input
+              type="text"
+              placeholder="Amount"
+              value={amountIn}
+              onChange={(e) => setAmountIn(e.target.value)}
+              className="text-right w-full bg-transparent text-lg outline-none mb-1"
+            />
+            <span className="text-gray-400 text-sm">$0.0</span>
+          </div>
         </div>
         <div className=" rounded-full p-3 bg-gray-800 shadow-[2px_2px_5pxrgba(0,0,0,0.2),-1px_-1px_5px_rgba(0,0,0,0.2)] dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)] flex w-10 h-10 items-end justify-center">
           <AiOutlineSwap className="rotate-90" />
         </div>
         {/* Token Out */}
-        <div className="flex flex-row items-center dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)] bg-gray-800 p-3 rounded-lg">
-          <div className="flex flex-col w-full">
-            <input
-              type="text"
-              placeholder="Amount"
-              value={amountOut}
-              onChange={(e) => setAmountOut(e.target.value)}
-              className="w-full bg-transparent text-lg outline-none mb-1"
-            />
-            <span className="text-gray-400 text-sm">$0.0 </span>
-          </div>
-          <div className="relative ml-4">
+        <div className="flex  w-full justify-between items-center dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)] bg-gray-800 p-3 rounded-lg">
+          <div className="relative flex flex-col items-center cursor-pointer w-auto">
             <div
               className="flex items-center cursor-pointer"
               onClick={() => setShowDropdownOut(!showDropdownOut)}>
               <TbCoinTakaFilled className="mr-2" />
               <span>{tokenOut.symbol.toUpperCase()}</span>
-              {/* //<FaChevronDown className="ml-2" /> */}
+              <FaChevronDown className="ml-2" />
             </div>
             {showDropdownOut && (
-              <div className="absolute bg-gray-800 mt-2 p-2 right-0 rounded-lg w-48 max-h-40 overflow-auto z-10">
+              <div className="absolute bg-gray-800 mt-2 p-2 top-8 left-0 rounded-lg w-48 max-h-40 overflow-auto z-10">
                 <input
                   type="text"
                   placeholder="Search token..."
@@ -166,7 +161,27 @@ const Swap = () => {
               Balance:0
             </span>
           </div>
+          <div className="flex flex-col items-end w-auto">
+            <input
+              type="text"
+              placeholder="Amount"
+              value={amountOut}
+              onChange={(e) => setAmountOut(e.target.value)}
+              className="w-full text-right bg-transparent text-lg outline-none mb-1"
+            />
+            <span className="text-gray-400 text-sm">$0.0 </span>
+          </div>
         </div>
+      </div>
+      {/* Slippage Options */}
+      <div className="flex justify-center  space-x-4 mt-4">
+        {["0.25%", "1%", "2.5%", "Custom"].map((slippage) => (
+          <button
+            key={slippage}
+            className="px-3 py-1 bg-gray-800 text-[12px] md:text-sm cursor-pointer dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)] text-white rounded-lg hover:bg-gray-700">
+            {slippage}
+          </button>
+        ))}
       </div>
 
       {/* Swap Button */}

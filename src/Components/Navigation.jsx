@@ -12,6 +12,9 @@ import { GiSaxophone } from "react-icons/gi";
 import { CiCoinInsert } from "react-icons/ci";
 //import { TbCoinTaka } from "react-icons/tb";
 import { MdRealEstateAgent } from "react-icons/md";
+import { BsBank2 } from "react-icons/bs";
+import { FaCompressArrowsAlt } from "react-icons/fa";
+import { LuArrowUpDown } from "react-icons/lu";
 const Navigation = ({ darkMode }) => {
   const location = useLocation(); // Get the current URL
   const colors = [
@@ -44,35 +47,35 @@ const Navigation = ({ darkMode }) => {
     {
       to: "/",
       label: "Trade",
-      icon: <BsCurrencyExchange className="text-xl" />,
+      icon: <LuArrowUpDown className="text-2xl" />,
       iconColor: "text-[#54FFFB]",
       dis: "translate-x-0",
     },
     {
       to: "/swap",
       label: "Pool",
-      icon: <CiCoinInsert className="text-xl" />,
+      icon: <FaCompressArrowsAlt className="text-2xl" />,
       dis: "translate-x-16",
       iconColor: "dark:text-[#FF05DF]",
     },
     {
       to: "/foundation",
       label: "Foundation",
-      icon: <MdRealEstateAgent className="text-xl" />,
+      icon: <BsBank2 className="text-2xl" />,
       dis: "translate-x-32",
       iconColor: "dark:text-[#89FFCC]",
     },
     {
       to: "/launchpad",
       label: "InnoLaunch",
-      icon: <MdRocketLaunch className="text-xl" />,
+      icon: <MdRocketLaunch className="text-2xl" />,
       dis: "translate-x-48",
       iconColor: "dark:text-[#FFEA6C]",
     },
     {
       to: "/discover",
       label: "Saxophone",
-      icon: <GiSaxophone className="text-xl" />,
+      icon: <GiSaxophone className="text-2xl" />,
       iconColor: "dark:text-[#48FD0C]",
 
       dis: "translate-x-64",

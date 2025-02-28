@@ -6,7 +6,7 @@ const Home= () => {
   const [activeTab, setActiveTab] = useState("swap");
 
   return (
-    <div className="p-6 pt-28">
+    <div className="p-6 pt-28 flex flex-col w-full justify-center items-center">
       {/* Toggle Buttons */}
       <div className="flex gap-4 mb-6">
         <button
