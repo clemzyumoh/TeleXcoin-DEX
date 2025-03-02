@@ -85,11 +85,11 @@ const Strategies = () => {
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto mb-32">
+    <div className="p- flex flex-col justify-center mb-32">
       <h2 className="text-2xl font-semibold mb-4">Strategies</h2>
 
       {/* Tabs */}
-      <div className="flex gap-4 border-b">
+      <div className="flex gap-4 w-full border-b">
         {["yield-farming", "auto-compounding", "hedging"].map((tab) => (
           <button
             key={tab}
@@ -105,9 +105,9 @@ const Strategies = () => {
       </div>
 
       {/* Tab Content */}
-      <div className="mt-4">
+      <div className="mt-4 w-full flex">
         {activeTab === "yield-farming" && (
-          <div className="p-4  rounded-2xl bg-gray-800 shadow-md">
+          <div className="p-4  rounded-2xl bg-gray-800 w-full shadow-md">
             <h3 className="text-lg font-bold">Yield Farming</h3>
             <p className="text-sm text-gray-400">
               Stake your assets and earn passive income.
