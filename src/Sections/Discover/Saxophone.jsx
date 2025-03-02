@@ -6,7 +6,7 @@ const Saxophone = () => {
   const [activeTab, setActiveTab] = useState("Podcast");
 
   return (
-    <div className="w-full p-4 mt-32">
+    <div className="w-full p-4 mt-20">
       <div className="flex space-x-4 mb-4">
         <button
           className={`px-4 py-2 rounded ${

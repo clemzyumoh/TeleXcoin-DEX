@@ -129,16 +129,15 @@ const Launchpad = () => {
           className="w-60 h-60 absolute top- lg:top-20 right-16 lg:left-32 hidden lg:flex  bg-[#97f4f3] blur-[200px] rounded-full"
         />
       </div> */}
-      <div className=" mx-auto   lg:w-[50vw] lg:h-[80vh] shadow-2xl mb-0 text-center">
+      <div className=" mx-auto px-6  lg:w-[50vw] lg:h-[80vh] shadow-2xl mb-0 text-center">
         <img
           src={img6}
           alt=""
-          className="text-center lg:mx-auto w-full h-full rounded-b-4xl"
+          className="text-center lg:mx-auto w-full h-full rounded-4xl"
         />
       </div>
       {/* Project Cards */}
       <div className="flex justify-center items-center my-6 flex-col mx-8">
-      
         <AnimatedText
           text=" Empowering DeWorld Projects on the Deep Roots Blockchain."
           animation="fade"
@@ -147,11 +146,11 @@ const Launchpad = () => {
         />
       </div>
 
-      <div className="grid lg:grid-cols-2 grid-cols-1 dark:bg-[#E1F0F8] py-8 rounded-2xl mt-10 mb-16 gap-6 md:mx-16 mx-2 px-2 lg:px-6">
+      <div className="grid lg:grid-cols-2 grid-cols-1 dark:bg-[#E1F0F8] py-8 rounded-3xl mt-10 mb-16 gap-6 md:mx-16 mx-2 px-2 lg:px-6">
         {projects.map((project) => (
           <motion.div
             key={project.id}
-            className="relative w-full lg:w-full md:w-[70vw] md:mx-auto h-[550px]  md:h-[600px] lg:h-[600px] bg-cover  bg-center shadow-lg rounded-lg overflow-hidden"
+            className="relative w-full lg:w-full md:w-[70vw] md:mx-auto h-[550px]  md:h-[600px] lg:h-[600px] bg-cover rounded-4xl  bg-center shadow-lg  overflow-hidden"
             style={{ backgroundImage: `url(${project.image})` }} // ✅ Use correct project image
             transition={{ type: "spring", stiffness: 100 }}>
             <div className="z-0 text-lg">
@@ -162,6 +161,26 @@ const Launchpad = () => {
             </div>
             {/* Vote Section */}
             <div className="absolute bottom-0 left-0 right-0 flex-col bg-black bg-opacity-60 text-white flex flex-wrap justify-center items-center p-3 rounded-lg">
+              <div className="flex justify-between w-full items-center">
+                <div className="">
+                  <h3 className="text-lg font-semibold leading-tight">
+                    {project.name}
+                  </h3>
+                  <p className="text-[12px]">{project.description}</p>
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-bold text-sm text-transparent">
+                    {" "}
+                    {project.href}
+                  </a>
+                </div>
+                <h3 className="font-bold text-sm   md:text-xl bg-gradient-to-r from-[#F68082] to-[#97F4F3] bg-clip-text font-orbitron text-transparent">
+                  A & P{" "}
+                </h3>
+              </div>
+
               <AnimatedText
                 text="VOTE"
                 animation="fade"
@@ -179,7 +198,7 @@ const Launchpad = () => {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className="flex justify-between flex-col items-center w-full bg-gray-800 px-2 py-2 rounded-md">
+                    className="flex justify-between flex-col items-center w-full bg-gray-800 px-2 py-2 rounded-2xl">
                     <span>{item.phase}</span>
                     <span className="text-gray-300">{item.percent}</span>
                     <button className="bg-gradient-to-r from-[#F68082] to-[#97F4F3] text-black font-bold px-2 py-1 rounded">
@@ -192,7 +211,7 @@ const Launchpad = () => {
 
             {/* Project Details */}
 
-            <div className="absolute top-0 left-0 right-0 bg-black bg-opacity-60 text-white flex-wrap justify-between items-center p-3 rounded-lg">
+            {/* <div className="absolute top-0 left-0 right-0 bg-black bg-opacity-60 text-white flex-wrap justify-between items-center p-3 rounded-lg">
               <div className="flex justify-between items-center">
                 <div className="">
                   <h3 className="text-lg font-semibold leading-tight">
@@ -212,7 +231,7 @@ const Launchpad = () => {
                   A & P{" "}
                 </h3>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         ))}
       </div>

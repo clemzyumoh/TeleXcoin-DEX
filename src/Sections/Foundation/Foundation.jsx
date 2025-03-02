@@ -44,12 +44,12 @@ const Foundation = () => {
       </div> */}
 
       <div className="flex flex-col justify-center items-center  w-full lg:mt-8">
-        <div className="w-full flex justify-center bg-black rounded-b-4xl items-center ">
+        <div className="w-full flex justify-center bg-black px-6  rounded-4xl items-center ">
           <AnimateItem delay={0.2} direction="left">
             <img
               src={banner}
               alt="Membership"
-              className=" rounded-b-4xl lg:rounded-none lg:h-[80vh] lg:w-[60vw] h-auto"
+              className=" rounded-4xl lg:rounded-none lg:h-[80vh] lg:w-[60vw] h-auto"
             />
           </AnimateItem>
         </div>

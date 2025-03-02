@@ -35,7 +35,7 @@ const PoolCard = ({ pool }) => {
           {" "}
           <span className="text-[12px]">LP Rewards:</span> {pool.rewards}%
         </span>
-        <button className="bg-gray-800 dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)] px-3 py-1 rounded-lg text-white">
+        <button className="bg-gray-800 text-[#89FFCC] dark:shadow-[3px_3px_10px_rgba(0,0,0,0.6),-8px_-8px_10px_rgba(255,255,255,0.1)] px-3 py-1 rounded-lg ">
           + Add
         </button>
         <button onClick={() => setShowDetails(!showDetails)}>
