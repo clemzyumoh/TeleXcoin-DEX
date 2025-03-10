@@ -21,6 +21,7 @@ const TradingCharts = () => {
       shared: true,
       intersect: false,
       offsetY: -10,
+ 
       y: {
         formatter: (value, { seriesIndex, dataPointIndex, w }) => {
           // Get values of both layers
@@ -47,8 +48,8 @@ const TradingCharts = () => {
   };
 
   const areaChartSeries = [
-    { name: "V1", data: [50, 80, 60, 100, 90, 120] },
-    { name: "V2", data: [30, 60, 50, 90, 80, 110] },
+    { name: " V1", data: [50, 80, 60, 100, 90, 120] },
+    { name: `   ${"   "}   V2`, data: [30, 60, 50, 90, 80, 110] },
   ];
 
   // Column Chart Configuration (Stacked)
