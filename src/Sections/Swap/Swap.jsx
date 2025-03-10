@@ -6,9 +6,9 @@ const Liquidity = () => {
   const [activeTab, setActiveTab] = useState("pool"); // Default tab: Pool
 
   return (
-    <div className="w-full flex flex-col mt-20 items-start p-4">
+    <div className=" flex flex-col mt-20  items-start w-full py-4 px-">
       {/* Toggle Buttons */}
-      <div className="flex space-x-4 mb-4">
+      <div className="flex space-x-4 px-3 mb-4">
         <button
           className={`px-4 py-2 rounded-lg text-white ${
             activeTab === "pool"

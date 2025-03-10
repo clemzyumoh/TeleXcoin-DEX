@@ -7,7 +7,7 @@ const PoolCard = ({ pool }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="bg-gray-800 p-4 rounded-lg shadow-md mb-4">
+    <div className="bg-gray-800 p-4 rounded-lg mx-4 shadow-md mb-4">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
           <img
@@ -94,9 +94,9 @@ const YourP = () => {
   );
 
   return (
-    <div className="p-6 flex flex-col mb-32 w-full">
+    <div className="md:p-6  flex flex-col mb-32 w-[98vw] lg:w-full lg:mx-16">
       <TradeChart/>
-      <div className="flex w-full justify-between items-center mb-6">
+      <div className="flex w-full justify-between p-4 items-center mb-6">
         <h2 className="md:text-xl hidden md:block text-sm font-bold">Liquidity Pools</h2>
         <input
           type="text"
