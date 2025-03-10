@@ -123,7 +123,7 @@ const NewPosition = () => {
                   )}
                 </button>
                 {showDropdown === type && (
-                  <div className="absolute bg-gray-800  p-4 rounded-lg inset-2 md:w-[70vw] mb-32 lg:w-[60vw] w-[90vw] h-screen flex flex-col items-center z-10">
+                  <div className="absolute bg-gray-800 pb-24  p-4 rounded-lg inset-2 md:w-[70vw]  lg:w-[60vw] w-[90vw] h-screen flex flex-col items-center z-10">
                     <div className="w-full flex justify-between items-center mb-2">
                       <h3 className="text-lg">Select Token</h3>
                       <button onClick={() => setShowDropdown(null)}>X</button>
