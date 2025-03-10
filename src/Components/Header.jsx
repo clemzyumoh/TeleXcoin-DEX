@@ -62,7 +62,7 @@ const Header = ({ darkMode, setDarkMode }) => {
             animate={{ rotate: darkMode ? 180 : 0 }}
             transition={{ type: "spring", stiffness: 300 }}
             onClick={() => setDarkMode(!darkMode)}
-            className="w-[24px]">
+            className="w-[24px] hidden">
             {darkMode ? (
               <Sun size={24} className="dark:text-[#b0e6f8]" />
             ) : (

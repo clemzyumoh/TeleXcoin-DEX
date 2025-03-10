@@ -30,7 +30,10 @@ const Liquidity = () => {
       </div>
 
       {/* Render Components Based on Active Tab */}
-      {activeTab === "pool" ? <Pool /> : <Strategies />}
+
+      <div className="flex justify-center items-center  w-full">
+        {activeTab === "pool" ? <Pool /> : <Strategies />}
+      </div>
     </div>
   );
 };
