@@ -17,8 +17,10 @@ const TradingCharts = () => {
     yaxis: { show: false },
     grid: { show: false },
     tooltip: {
+      enabled: true,
       shared: true,
       intersect: false,
+      offsetY: -10,
       y: {
         formatter: (value, { seriesIndex, dataPointIndex, w }) => {
           // Get values of both layers
